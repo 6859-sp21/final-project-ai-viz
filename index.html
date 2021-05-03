@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viz</title>
-
+    <title>Poetry Viz</title>
     <!--font-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;800&display=swap" rel="stylesheet">
@@ -15,23 +15,122 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!--D3 library-->
     <script src="https://d3js.org/d3.v6.min.js"></script>
-    <script src="js/d3-sankey.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
     <script src="https://unpkg.com/topojson@3"></script>
     <script src="https://unpkg.com/topojson-client@3"></script>
     <!--styles-->
     <link rel="stylesheet" href="css/styles.css"> </head>
-</head>
+
 <body>
-    <h1>hello world</h1>
-
-
+    <section id="home">
+        <h1>Reading the sentiments</h1> </section>
+    <section id="background">
+        <h2>Background</h2>
+        <p>In one form or another, poetry has been around for thousands of years.</p>
+    </section>
+    <section id="Past"> </section>
+    <section class="section intro">
+        <div class="container">
+            <h1>A Brief History of Poetry</h1> </div>
+    </section>
+    <section class="timeline">
+        <ol>
+            <li>
+                <div> <img src="./IMG/poem.png" width="200" height="200">
+                    <time>2000 B.C.</time> The first instance of Poetry appeared as early as the 20th century B.C. </div>
+            </li>
+            <li>
+                <div>
+                    <time>1900 B.C.</time> The Epic of Gilgamesh often is cited as one of the earliest works of epic poetry. <img src="./IMG/ancientBook.png" width="200" height="200"> </div>
+            </li>
+            <li>
+                <div> <img src="./IMG/poem (1).png" width="200" height="200">
+                    <time>1300</time> Petrarca, for whom the Petrarchan sonnet is named, is perhaps one of the most famous early writers of the sonnet. </div>
+            </li>
+            <li>
+                <div>
+                    <time>1500</time> It became best known as an English poetic form through the work of William Shakespeare <img src="./IMG/shakespeare.png" width="200" height="200"> </div>
+            </li>
+            <li>
+                <div> <img src="./IMG/queen.png" width="200" height="200">
+                    <time>1600</time> Following the reign of Queen Elizabeth I, the English Restoration period (from 1660-1689) saw the rise of literary elites, such as John Dryden. </div>
+            </li>
+            <li>
+                <div>
+                    <time>1800</time> In the Romantics and 19th-Century Poetry, some important poets to consider include key Romantic poets such as William Blake, Samuel Taylor Coleridge, William Wordsworth, and John Keats. <img src="./IMG/love-letter.png" width="200" height="200"> </div>
+            </li>
+            <li>
+                <div> <img src="./IMG/frame.png" width="200" height="200">
+                    <time>1900</time> Toward the turn of the 20th century as Whitman continued to revise his 1855 edition of Leaves of Grass, he wrote, “Of Modern Man I Sing,” ushering in a new period—and a variety of forms—for poetry. </div>
+            </li>
+            <li>
+                <div>
+                    <time>1900</time> The 20th century also witnessed a number of poets winning the Nobel Prize, from the United States to India. <img src="./IMG/nobel-prize.png" width="200" height="200"> </div>
+            </li>
+            <li>
+                <div> <img src="./IMG/chip.png" width="200" height="200">
+                    <time>Future</time> The development of poetry is ongoing. </div>
+            </li>
+            <li></li>
+        </ol>
+        <!--
+        <div class="arrows">
+            <div class="arrow arrow__prev disabled" disabled aria-hidden="true"> <i class="fa fa-chevron-circle-left"></i> </div>
+            <div class="arrow arrow__next" aria-hidden="true" alt="next timeline arrow"> <i class="fa fa-chevron-circle-right "></i> </div>
+        </div>
+-->
+    </section>
+    <section id="wordcloud"> <img src="./IMG/wordcloud.svg" height="800"> </section>
+    <section id="Ren-Mod">
+        <div id="violin"></div>
+    </section>
+    <section id="type_compare">
+        <div id="radar_type"></div>
+    </section>
+    <section id="Creatiion">
+        <div style="display: flex;">
+            <div style="padding-right: 50px; height: 500px">
+                <textarea id="userpoeminput">type your poem here ...</textarea>
+                <br>
+                <button onclick="getUserInput('userpoeminput', 'UserPoemAnalysis')">Analyze</button>
+                <br>
+                <br>
+                <div id="Testresult"></div>
+            </div>
+            <div>
+                <div style="padding-bottom: 10px;">
+                    <button id="toggleUserOutput0" class="toggleUserOutput active" onclick="toggleUserOutput(0)">Valence</button>
+                    <button id="toggleUserOutput1" class="toggleUserOutput" onclick="toggleUserOutput(1)">Dominance</button>
+                    <button id="toggleUserOutput2" class="toggleUserOutput" onclick="toggleUserOutput(2)">Arousal</button>
+                </div>
+                <div style="display: flex; height: 0;">
+                    <div id="uservalence"></div>
+                    <div id="userdominance"></div>
+                    <div id="userarousal"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--footer-->
+    <footer>
+        <div class="f-f footer-container">
+            <div class="fo-tile">
+                <h1>6.859<br>Interactive<br>Data Visualization</h1>
+                <p>2021
+                    <br>All rights reserved ©</p>
+            </div>
+            <div class="fo-tile">
+                <p>Massachusetts Institute of Technology</p>
+            </div>
+        </div>
+    </footer>
     <!--bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-    <script src="./js/bartest.js"></script>
+    <script src="./js/violinBaby.js"></script>
+    <script src="./js/Radar.js"></script>
     <script src="./js/main.js"></script>
-
+    <script src="./js/AI_Poem_Analysis.js"></script>
 </body>
+
 </html>

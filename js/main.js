@@ -1,3 +1,6 @@
-d3.csv("/data/4000-cleaned.csv", function(data) {
-    console.log(data);
-});
+function Capitalize(str) {
+    let lower = String(str).toLowerCase();
+    return lower.replace(/(^| )(\w)/g, function (x) {
+        return x.toUpperCase();
+    });
+}
