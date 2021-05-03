@@ -3,7 +3,7 @@ function CallViolin() {
     // set the dimensions and margins of the graph
     var margin = 30,
         width = 800,
-        height = 800;
+        height = 700;
 
     // set the ranges
 
