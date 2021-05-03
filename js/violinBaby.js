@@ -24,9 +24,9 @@ function CallViolin() {
     d3.json("./processeddata/Old_New_Poem_Sentiment.json").then(function (data) {
         let violindata = {};
         // set increment = 
-        let increment = 0.01;
+        let increment = 0.02;
 
-        let c = ["valence", "dominance", "arousal"];
+        let c = ["valence", "arousal", "dominance"];
         // for-loop for binnin data needs a faster way to do so
         c.forEach(function (cat) {
             let dataset = [];
@@ -52,18 +52,18 @@ function CallViolin() {
         for (let i = 0; i < 3; i++) {
 
             let y = d3.scaleLinear()
-                .domain([0, 99])
+                .domain([0, 1/increment])
                 .range([height - margin, 0]);
             
             let x_right = d3.scaleLinear()
-                .range([axis_start + (i*axis_dist), axis_start + (i*axis_dist) + 50]);
+                .range([axis_start + (i*axis_dist), axis_start + (i*axis_dist) + 80]);
 
             let x_left = d3.scaleLinear()
-                .range([axis_start + (i*axis_dist), axis_start + (i*axis_dist) - 50]);
+                .range([axis_start + (i*axis_dist), axis_start + (i*axis_dist) - 80]);
 
             // define the area
             let area_right = d3.area()
-                .curve(d3.curveBasis)
+                .curve(d3.curveCardinal)
                 .x0(function (d) {
                     return axis_start + i*axis_dist;
                 })
@@ -75,7 +75,7 @@ function CallViolin() {
                 });
 
             let area_left = d3.area()
-                .curve(d3.curveBasis)
+                .curve(d3.curveCardinal)
                 .x0(function (d) {
                     return axis_start + i*axis_dist;
                 })
@@ -107,7 +107,7 @@ function CallViolin() {
                 .data([violindata[c[i]]])
                 .attr("class", "area")
                 .attr("d", area_left)
-                .style("fill", "white");
+                .style("fill", "pink");
 
         }
 
