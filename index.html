@@ -19,79 +19,139 @@
     <script src="https://unpkg.com/topojson@3"></script>
     <script src="https://unpkg.com/topojson-client@3"></script>
     <!--styles-->
-    <link rel="stylesheet" href="css/styles.css"> </head>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
 
-<body>
+<body style="overflow-x: hidden;">
     <section id="home">
-        <h1>Reading between the Lines</h1> </section>
+        <h1>Reading between the Lines</h1>
+    </section>
     <section id="background">
-        <h1>Introduction</h1>
-        <h3>In one form or another, poetry has been around for thousands of years.</h3>
-        <h3>Can NLP-based sentiment analysis provide insights to poetry?</h3>
+        <section class="section intro">
+            <div class="container">
+                <h1>INTRODUCTION</h1>
+            </div>
+        </section>
+        <h3 style="padding-top: 10vh;">Can NLP-based sentiment analysis provide insights to poetry?</h3>
+
+        <p style="text-align: center; padding: 10vh 40vh; font-size: 20px; line-height: normal;">
+            My goal is to exploring the ways poetic sentiment can be interpreted computationally via sentiment analysis, and if visualization can be used as a tool to help the readers deconstruct the poet’s choice of words behind their creation, or provide a new perspective for the poet on what they have written.<br><br>
+            Poetry is one of the most subjective and expressive form of literature. Poetry as an verbal art form predates written text, often greatly involved with emotions, history, culture, religion and personal expression. Often the best poems are written from the heart, raw, emotional and to the point.<br><br>
+            Poem favors brevity, yet the best poems also capture a great amount of detail, making them incredibly powerful to their readers. However, this makes poetry often difficult to fully understand due to its unique literature structure. Sometimes the words make sense but we’re not sure what the poet’s attitude is, and sometimes it’s hard to find the climax of where the poet puts in their strongest emotions.
+
+        </p>
+
     </section>
     <section id="Past"> </section>
     <section class="section intro">
         <div class="container">
-            <h1>A Brief History of Poetry</h1> </div>
+            <h1>A Brief History of Poetry</h1>
+        </div>
     </section>
     <section class="timeline">
         <ol>
             <li>
                 <div> <img src="./IMG/poem.png" width="200" height="200">
-                    <time>2000 B.C.</time> The first instance of Poetry appeared as early as the 20th century B.C. </div>
+                    <time>2000 B.C.</time> The first instance of Poetry appeared as early as the 20th century B.C.
+                </div>
             </li>
             <li>
                 <div>
-                    <time>1900 B.C.</time> The Epic of Gilgamesh often is cited as one of the earliest works of epic poetry. <img src="./IMG/ancientBook.png" width="200" height="200"> </div>
+                    <time>1900 B.C.</time> The Epic of Gilgamesh often is cited as one of the earliest works of epic poetry. <img src="./IMG/ancientBook.png" width="200" height="200">
+                </div>
             </li>
             <li>
                 <div> <img src="./IMG/poem (1).png" width="200" height="200">
-                    <time>1300</time> Petrarca, for whom the Petrarchan sonnet is named, is perhaps one of the most famous early writers of the sonnet. </div>
+                    <time>1300</time> Petrarca, for whom the Petrarchan sonnet is named, is perhaps one of the most famous early writers of the sonnet.
+                </div>
             </li>
             <li>
                 <div>
-                    <time>1500</time> It became best known as an English poetic form through the work of William Shakespeare <img src="./IMG/shakespeare.png" width="200" height="200"> </div>
+                    <time>1500</time> It became best known as an English poetic form through the work of William Shakespeare <img src="./IMG/shakespeare.png" width="200" height="200">
+                </div>
             </li>
             <li>
                 <div> <img src="./IMG/queen.png" width="200" height="200">
-                    <time>1600</time> Following the reign of Queen Elizabeth I, the English Restoration period (from 1660-1689) saw the rise of literary elites, such as John Dryden. </div>
+                    <time>1600</time> Following the reign of Queen Elizabeth I, the English Restoration period (from 1660-1689) saw the rise of literary elites, such as John Dryden.
+                </div>
             </li>
             <li>
                 <div>
-                    <time>1800</time> In the Romantics and 19th-Century Poetry, some important poets to consider include key Romantic poets such as William Blake, Samuel Taylor Coleridge, William Wordsworth, and John Keats. <img src="./IMG/love-letter.png" width="200" height="200"> </div>
+                    <time>1800</time> In the Romantics and 19th-Century Poetry, some important poets to consider include key Romantic poets such as William Blake, Samuel Taylor Coleridge, William Wordsworth, and John Keats. <img src="./IMG/love-letter.png" width="200" height="200">
+                </div>
             </li>
             <li>
                 <div> <img src="./IMG/frame.png" width="200" height="200">
-                    <time>1900</time> Toward the turn of the 20th century as Whitman continued to revise his 1855 edition of Leaves of Grass, he wrote, “Of Modern Man I Sing,” ushering in a new period—and a variety of forms—for poetry. </div>
+                    <time>1900</time> Toward the turn of the 20th century as Whitman continued to revise his 1855 edition of Leaves of Grass, he wrote, “Of Modern Man I Sing,” ushering in a new period—and a variety of forms—for poetry.
+                </div>
             </li>
             <li>
                 <div>
-                    <time>1900</time> The 20th century also witnessed a number of poets winning the Nobel Prize, from the United States to India. <img src="./IMG/nobel-prize.png" width="200" height="200"> </div>
+                    <time>1900</time> The 20th century also witnessed a number of poets winning the Nobel Prize, from the United States to India. <img src="./IMG/nobel-prize.png" width="200" height="200">
+                </div>
             </li>
             <li>
                 <div> <img src="./IMG/chip.png" width="200" height="200">
-                    <time>Future</time> The development of poetry is ongoing. </div>
+                    <time>Future</time> The development of poetry is ongoing.
+                </div>
             </li>
             <li></li>
         </ol>
-        <!--
-        <div class="arrows">
-            <div class="arrow arrow__prev disabled" disabled aria-hidden="true"> <i class="fa fa-chevron-circle-left"></i> </div>
-            <div class="arrow arrow__next" aria-hidden="true" alt="next timeline arrow"> <i class="fa fa-chevron-circle-right "></i> </div>
-        </div>
--->
+
     </section>
-    <section id="wordcloud"> <img src="./IMG/wordcloud.svg" height="800"> </section>
+    <hr>
+    <section id="wordcloud" style="padding-top: 10vh;">
+        <div class="row">
+            <div class="col-8">
+                <img src="./IMG/wordcloud.svg" height="700">
+            </div>
+            <div class="col-4">
+                <p style="font-size: 20px; line-height: normal; padding-right: 10vw; padding-top: 10vw;">
+                    In one form or another, poetry has been around for thousands years.<br><br>
+                    By extracting words in poems such as love, fears, suffering, burning, and death, can we quantify the expression of words and to provide insight of sentiments in poems?
+                </p>
+            </div>
+        </div>
+
+    </section>
     <section id="Ren-Mod">
-        <div id="violin"></div>
+        <section class="section intro">
+            <div class="container">
+                <h1>Comparison between the Renaissance and the Modern</h1>
+            </div>
+        </section>
+        <div class="row">
+            <div class="col-8">
+                <div id="violin"></div>
+            </div>
+            <div class="col-4">
+                <p style="font-size: 20px; line-height: normal; padding-right: 10vw; padding-top: 10vw;">
+                    The modern poem has a more diverse and rich sentiment compared to the classic one, as the curve fluctuated more aggressively.
+                </p>
+            </div>
+        </div>
+
     </section>
     <section id="type_compare">
-        <div id="radar_type"></div>
+        <section class="section intro">
+            <div class="container">
+                <h1>Comparison between the Renaissance and the Modern</h1>
+            </div>
+        </section>
+        <div class="row">
+            <div class="col-6">
+                <div id="radar_type"></div>
+            </div>
+            <div class="col-6">
+                <img src="./IMG/Radar-MockUp.jpg" width="800" height="600">
+            </div>
+        </div>
     </section>
-    <section id="Creatiion">
+    <section id="Creatiion" style="padding: 100px">
         <div style="display: flex;">
             <div style="padding-right: 50px; height: 500px">
-                <textarea id="userpoeminput">type your poem here ...</textarea>
+                <textarea id="userpoeminput">type your poem here ...
+                </textarea>
                 <br>
                 <button onclick="getUserInput('userpoeminput', 'UserPoemAnalysis')">Analyze</button>
                 <br>
@@ -118,7 +178,8 @@
             <div class="fo-tile">
                 <h1>6.859<br>Interactive<br>Data Visualization</h1>
                 <p>2021
-                    <br>All rights reserved ©</p>
+                    <br>All rights reserved ©
+                </p>
             </div>
             <div class="fo-tile">
                 <p>Massachusetts Institute of Technology</p>
@@ -132,6 +193,4 @@
     <script src="./js/Radar.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/AI_Poem_Analysis.js"></script>
-</body>
-
-</html>
+</body></html>

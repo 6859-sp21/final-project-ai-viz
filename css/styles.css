@@ -30,15 +30,15 @@ body {
 /* home */
 
 #home {
-    background-color: black;
     height: 100vh;
     text-align: center;
-    padding-top: 50vh;
+    padding-top: 45vh;
 }
 
 #background {
     height: 100vh;
     text-align: center;
+/*    padding-top: 20vh;*/
 }
 
 
