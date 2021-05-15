@@ -8,8 +8,7 @@
     <title>Poetry Viz</title>
     <!--font-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400;1,700&family=Stalemate&display=swap" rel="stylesheet">
     <!--boostrap 'n libraries-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -22,138 +21,172 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body style="overflow-x: hidden;">
+<body>
+
+    <nav>
+        <a href="#home"><span>Home</span><i class="fa fa-circle"></i></a>
+        <a href="#history"><span>History</span><i class="fa fa-circle"></i></a>
+        <a href="#nlp"><span>NLP & Sentiment</span><i class="fa fa-circle"></i></a>
+        <a href="#context"><span>Context</span><i class="fa fa-circle"></i></a>
+        <a href="#development"><span>Development</span><i class="fa fa-circle"></i></a>
+        <a href="#analysis"><span>Analysis</span><i class="fa fa-circle"></i></a>
+    </nav>
+
     <section id="home">
-        <h1>Reading between the Lines</h1>
-    </section>
-    <section id="background">
-        <section class="section intro">
-            <div class="container">
-                <h1>INTRODUCTION</h1>
-            </div>
-        </section>
-        <h3 style="padding-top: 10vh;">Can NLP-based sentiment analysis provide insights to poetry?</h3>
-
-        <p style="text-align: center; padding: 10vh 40vh; font-size: 20px; line-height: normal;">
-            My goal is to exploring the ways poetic sentiment can be interpreted computationally via sentiment analysis, and if visualization can be used as a tool to help the readers deconstruct the poet’s choice of words behind their creation, or provide a new perspective for the poet on what they have written.<br><br>
-            Poetry is one of the most subjective and expressive form of literature. Poetry as an verbal art form predates written text, often greatly involved with emotions, history, culture, religion and personal expression. Often the best poems are written from the heart, raw, emotional and to the point.<br><br>
-            Poem favors brevity, yet the best poems also capture a great amount of detail, making them incredibly powerful to their readers. However, this makes poetry often difficult to fully understand due to its unique literature structure. Sometimes the words make sense but we’re not sure what the poet’s attitude is, and sometimes it’s hard to find the climax of where the poet puts in their strongest emotions.
-
-        </p>
-
-    </section>
-    <section id="Past"> </section>
-    <section class="section intro">
-        <div class="container">
-            <h1>A Brief History of Poetry</h1>
+        <img id="title" src="IMG/title.svg">
+        <div class="title_desc">
+            <h4>Can NLP-based sentiment analysis provide insights to poetry?</h4>
+            <p>The Goal of this project is to explore ways poetic sentiment can be interpreted computationally via NLP analysis, and if visualization can be used as a tool to help the readers deconstruct the poet’s choice of words behind their creation, or provide a new perspective for the poet on what they have written.<br><br><em>Continue scrolling for the poetry data exploration and visualization; if you are already familiar with the project, proceed to <a href="analyze.html" class="pill">Poetry Analyzer</a> and give it a try!</em></p>
         </div>
     </section>
-    <section class="timeline">
-        <ol>
-            <li>
-                <div> <img src="./IMG/poem.png" width="200" height="200">
-                    <time>2000 B.C.</time> The first instance of Poetry appeared as early as the 20th century B.C.
-                </div>
-            </li>
-            <li>
-                <div>
-                    <time>1900 B.C.</time> The Epic of Gilgamesh often is cited as one of the earliest works of epic poetry. <img src="./IMG/ancientBook.png" width="200" height="200">
-                </div>
-            </li>
-            <li>
-                <div> <img src="./IMG/poem (1).png" width="200" height="200">
-                    <time>1300</time> Petrarca, for whom the Petrarchan sonnet is named, is perhaps one of the most famous early writers of the sonnet.
-                </div>
-            </li>
-            <li>
-                <div>
-                    <time>1500</time> It became best known as an English poetic form through the work of William Shakespeare <img src="./IMG/shakespeare.png" width="200" height="200">
-                </div>
-            </li>
-            <li>
-                <div> <img src="./IMG/queen.png" width="200" height="200">
-                    <time>1600</time> Following the reign of Queen Elizabeth I, the English Restoration period (from 1660-1689) saw the rise of literary elites, such as John Dryden.
-                </div>
-            </li>
-            <li>
-                <div>
-                    <time>1800</time> In the Romantics and 19th-Century Poetry, some important poets to consider include key Romantic poets such as William Blake, Samuel Taylor Coleridge, William Wordsworth, and John Keats. <img src="./IMG/love-letter.png" width="200" height="200">
-                </div>
-            </li>
-            <li>
-                <div> <img src="./IMG/frame.png" width="200" height="200">
-                    <time>1900</time> Toward the turn of the 20th century as Whitman continued to revise his 1855 edition of Leaves of Grass, he wrote, “Of Modern Man I Sing,” ushering in a new period—and a variety of forms—for poetry.
-                </div>
-            </li>
-            <li>
-                <div>
-                    <time>1900</time> The 20th century also witnessed a number of poets winning the Nobel Prize, from the United States to India. <img src="./IMG/nobel-prize.png" width="200" height="200">
-                </div>
-            </li>
-            <li>
-                <div> <img src="./IMG/chip.png" width="200" height="200">
-                    <time>Future</time> The development of poetry is ongoing.
-                </div>
-            </li>
-            <li></li>
-        </ol>
 
-    </section>
-    <hr>
-    <section id="wordcloud" style="padding-top: 10vh;">
-        <div class="row">
-            <div class="col-8">
-                <img src="./IMG/wordcloud.svg" height="700">
+    <hr class="section">
+
+    <section id="history">
+        <h1 class="alignright">A Brief Introduction of Poetry</h1>
+        <p class="alignright">Poetry is one of the most subjective and expressive form of literature. <br>It as an verbal art form predates written text, often greatly involved with emotions, history, culture, religion and personal expression.</p>
+        <div class="timeline">
+            <div>
+                <div class="row rowtop">
+                    <div class="col-2">
+                        <img class="timelineillustration" src="./IMG/timeline/poem.png">
+                        <h4>~2000 B.C.</h4>
+                        <p>The first instance of Poetry appeared as early as the 20th century B.C.</p>
+                        <div class="timepin"><i class="fa fa-caret-down"></i></div>
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-2">
+                        <img class="timelineillustration" src="./IMG/timeline/petrarca.png">
+                        <h4>~1300</h4>
+                        <p>Petrarca, for whom the Petrarchan sonnet is named, is perhaps one of the most famous early writers of the sonnet.</p>
+                        <div class="timepin"><i class="fa fa-caret-down"></i></div>
+                    </div>
+                    <div class="col-2">
+                        <img class="timelineillustration" src="./IMG/timeline/queen.png">
+                        <h4>~1600</h4>
+                        <p>Following the reign of Queen Elizabeth I, the English Restoration period (from 1660-1689) saw the rise of literary elites, such as John Dryden.</p>
+                        <div class="timepin"><i class="fa fa-caret-down"></i></div>
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="col-2">
+                        <img class="timelineillustration" src="./IMG/timeline/frame.png">
+                        <h4>~1900</h4>
+                        <p>Toward the turn of the 20th century as Whitman wrote <em>“Of Modern Man I Sing”</em>, ushered a new period—and a variety of forms—for poetry.</p>
+                        <div class="timepin"><i class="fa fa-caret-down"></i></div>
+                    </div>
+                </div>
+                <div class="timelineline"></div>
+                <div class="row rowbottom">
+                    <div class="col-1"></div>
+                    <div class="col-2">
+                        <div class="timepin"><i class="fa fa-caret-up"></i></div>
+                        <p>The first instance of Poetry appeared as early as the 20th century B.C.</p>
+                        <h4>~2000 B.C.</h4>
+                        <img class="timelineillustration" src="./IMG/timeline/ancientBook.png">
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-2">
+                        <div class="timepin"><i class="fa fa-caret-up"></i></div>
+                        <p>It became best known as an English poetic form through the work of William Shakespeare.</p>
+                        <h4>~1500</h4>
+                        <img class="timelineillustration" src="./IMG/timeline/shakespeare.png">
+                    </div>
+                    <div class="col-2">
+                        <div class="timepin"><i class="fa fa-caret-up"></i></div>
+                        <p>In the 19th-Century Poetry, some important poets to consider include key Romantic poets such as William Blake, Samuel Taylor Coleridge, William Wordsworth, and John Keats.</p>
+                        <h4>~1800</h4>
+                        <img class="timelineillustration" src="./IMG/timeline/love-letter.png">
+                    </div>
+                    <div class="col-2">
+                        <div class="timepin"><i class="fa fa-caret-up"></i></div>
+                        <p>The 20th century also witnessed a number of poets winning the Nobel Prize, from the United States to India.</p>
+                        <h4>~1900</h4>
+                        <img class="timelineillustration" src="./IMG/timeline/nobel-prize.png">
+                    </div>
+                </div>
             </div>
-            <div class="col-4">
-                <p style="font-size: 20px; line-height: normal; padding-right: 10vw; padding-top: 10vw;">
-                    In one form or another, poetry has been around for thousands years.<br><br>
-                    By extracting words in poems such as love, fears, suffering, burning, and death, can we quantify the expression of words and to provide insight of sentiments in poems?
-                </p>
+            <div class="future">
+                <img class="timelineillustration" src="./IMG/timeline/chip.png">
+                <h4>~Future</h4>
+                <p>The development of poetry is ongoing.</p>
             </div>
         </div>
-
-    </section>
-    <section id="Ren-Mod">
-        <section class="section intro">
-            <div class="container">
-                <h1>Comparison between the Renaissance and the Modern</h1>
-            </div>
-        </section>
-        <div class="row">
-            <div class="col-8">
-                <div id="violin"></div>
-            </div>
-            <div class="col-4">
-                <p style="font-size: 20px; line-height: normal; padding-right: 10vw; padding-top: 10vw;">
-                    The modern poem has a more diverse and rich sentiment compared to the classic one, as the curve fluctuated more aggressively.
-                </p>
+        <hr class="div">
+        <div class="flexHorizontal">
+            <p>In one form or another, poetry has been around for thousands years, but it always lived in a fluid state of development. Often the best poems are written from the heart, raw, emotional and to the point. Poem favors brevity, yet the best poems also capture a great amount of detail, making them incredibly powerful to their readers. However, this makes poetry often difficult to fully understand due to its unique literature structure.<br><br><em>Can we quantify expression in poetry through methods like extracting high frequency word, such as love, fears, suffering, burning, and death in Shakespeare's poetry, or do we need more insights such as NLP / Sentiment Analysis to be able to understand the intention behind the poets' careful creation?</em>
+            </p>
+            <div class="flexVertical wordcloud">
+                <img src="./IMG/wordcloud.png">
+                <p class="caption">A static word-cloud visualization generated from a collection of poetry from works of well known Romantic Poets illustrating common themes shared between 18th to 19th-centry poetry.</p>
             </div>
         </div>
-
     </section>
-    <section id="type_compare">
-        <section class="section intro">
-            <div class="container">
-                <h1>Category Comparison</h1>
+
+    <hr class="section">
+
+    <section id="nlp" style="padding-top: 10vh;">
+        <h1>Where does Sentiment Analysis Fit in?<br><br></h1>
+        <div class="flexHorizontal">
+            <img class="illustration1" src="IMG/illustration/1.png">
+            <p>Sentiment analysis in Natural Language Processing (also known as opinion mining or emotion AI) is the use of NLP text analysi and computational linguistics to systematically extract, quantify, and identify affective states and subjective information in a text sample. The standard categories of classifications include valence, arousal, dominance, concreteness, etc.</p>
+        </div>
+        <hr class="div">
+        <div class="flexVertical">
+            <div id="lexicon"></div>
+            <div class="flexHorizontal lexiconoptions">
+                <div class="lexiconbuttons">
+                    <button id="lexiconvalence" class="lexiconbutton active">Valence</button>
+                    <button id="lexiconarousal" class="lexiconbutton">Arousal</button>
+                    <button id="lexicondominance" class="lexiconbutton">Dominance</button>
+                </div>
+                <button id="lexiconrandomize" class="resetbutton" onclick="lexiconbubble();"><i class="fa fa-random"></i></button>
             </div>
-        </section>
+            <p class="caption">A short caption</p>
+        </div>
+    </section>
+    
+    <hr class="section">
+    
+    <section id="context">
         <div class="row">
             <div class="col-6">
                 <div id="radar_type"></div>
             </div>
             <div class="col-6">
-                <img src="./IMG/Radar-MockUp.jpg" width="800" height="600">
+                <!--                <img src="./IMG/Radar-MockUp.jpg" width="800" height="600">-->
             </div>
         </div>
     </section>
+    
+    <hr class="section">
+    
+    <section id="development">
+        <div class="flexHorizontal">
+            <div class="violin">
+                <div id="violin"></div>
+                <p class="caption" style="margin-left: -100px;">You may <b>click on each sentiment attribute</b> to explore the individual poems and their mapping; <b>hover above the poem nodes</b> for more information and <b>click between the expanded sentiments</b> to exit.</p>
+            </div>
+            <p>Modern poetry seems to have more distinctive sentiment characteristics
+            </p>
+        </div>
+    </section>
+    
+    <hr class="section">
+    
+    <section id="analysis">
+        This is where individual poem analysis goes
+    </section>
+    
+    <!--
     <section id="Creatiion" style="padding-top: 150px;">
+        
         <section class="section intro">
             <div class="container">
                 <h1>Create your own Poem</h1>
             </div>
         </section>
-        <div style="display: flex; padding: 100px;">
+
+        <div id="capture" style="display: flex; padding: 100px;">
             <div style="padding-right: 50px; height: 500px">
                 <textarea id="userpoeminput">type your poem here ...
                 </textarea>
@@ -177,6 +210,7 @@
             </div>
         </div>
     </section>
+-->
     <!--footer-->
     <footer>
         <div class="f-f footer-container">
@@ -194,8 +228,12 @@
     <!--bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--screenshotlibrary-->
+    <script src="js/html2canvas.min.js"></script>
+    <!--personal js-->
     <script src="./js/violinBaby.js"></script>
     <script src="./js/Radar.js"></script>
+    <script src="./js/lexicon.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/AI_Poem_Analysis.js"></script>
+    <script src="./js/scroll.js"></script>
 </body></html>

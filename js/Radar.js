@@ -1,11 +1,11 @@
 function CallRadar() {
     // set the dimensions and margins of the graph
+    // 8 x 8
+    let factor = 50,
+        offset = 100;
     var margin = 30,
-        width = 800,
-        height = 2000;
-
-    let factor = 50;
-    let offset = 100;
+        width = offset * 8,
+        height = offset * 8;
 
     var svg = d3.select("#radar_type")
         .append("svg")
@@ -16,7 +16,6 @@ function CallRadar() {
     let categories = ["Nature", "Animals", "Arts & Sciences", "Painting & Sculpture", "Social Commentaries", "Gender & Sexuality", "Relationships", "Friends & Enemies", "Language & Linguistics", "Race & Ethnicity", "Living", "The Body", "Love", "Desire", "Religion", "Christianity", "Realistic & Complicated", "Activities", "Travels & Journeys", "Time & Brevity", "Seas, Rivers, & Streams", "Spring", "Money & Economics", "Birth & Birthdays", "Landscapes & Pastorals", "Weather", "History & Politics", "Town & Country Life", "War & Conflict", "Poetry & Poets", "Youth", "First Love", "Reading & Books", "Marriage & Companionship", "Men & Women", "Crime & Punishment", "Parenthood", "Family & Ancestors", "School & Learning", "Class", "Jobs & Working", "The Mind", "Eating & Drinking", "Sports & Outdoor Activities", "God & the Divine", "Photography & Film", "Cities & Urban Life", "Death", "Romantic Love", "Music", "Stars, Planets, Heavens", "Sorrow & Grieving", "Home Life", "Heartache & Loss", "Trees & Flowers", "Mythology & Folklore", "Greek & Roman Mythology", "Life Choices", "Sciences", "Summer", "Health & Illness", "Faith & Doubt", "The Spiritual", "Horror", "Growing Old", "Gardening", "Other Religions", "Break-ups & Vexed Love", "Gay, Lesbian, Queer", "Ghosts & the Supernatural", "Fairy-tales & Legends", "Heroes & Patriotism", "Indoor Activities", "Islam", "Theater & Dance", "Kwanzaa", "Philosophy", "Disappointment & Failure", "Judaism", "Coming of Age", "New Year", "Separation & Divorce", "Popular Culture", "Fall", "Architecture & Design", "Pets", "Winter", "Memorial Day", "Humor & Satire", "St. Patrick's Day", "Passover", "Independence Day", "Midlife", "Weddings", "Infancy", "Get Well & Recovery", "Graduation", "Valentine's Day"];
 
     d3.json("./processeddata/Category_Sentiment.json").then(function (data) {
-        console.log(data);
         let c = ["Valence", "Dominance", "Arousal"];
         let angles = {
             Valence: [0, Math.cos(Math.PI)],
