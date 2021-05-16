@@ -217,7 +217,7 @@ function CallViolin() {
                             .attr("class", "violinhover")
                             .attr("x", axis_start + i * axis_dist + 10)
                             .attr("y", 26)
-                            .text("Renaissance Poetry:")
+                            .text("Modern Poetry:")
                             .style("fill", moderncolor)
                             .style("text-anchor", "start")
                         svg.append("text")

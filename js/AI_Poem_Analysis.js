@@ -330,13 +330,16 @@ function poemAnalysis(poem, div_id) {
                 let worddata = category + ": " + d[category].toFixed(3);
 
                 wordvariations.forEach(function (word) {
-                    let markedword = "<button class='poemmark' style='background-color: " + notationcolor(d[category]) + ";'>" + word + "<span class='tooltiptext' style='background-color: " + notationcolor(d[category]) + ";'>" + worddata + "</span></button>";
+                    let replaceword = word.split("");
+                    replaceword = replaceword.join("\\");
+                    let markedword = "<button class='poemmark' style='background-color: " + notationcolor(d[category]) + ";'>" + replaceword + "<span class='tooltiptext' style='background-color: " + notationcolor(d[category]) + ";'>" + worddata + "</span></button>";
                     labeledpoem = labeledpoem.replace(new RegExp(" " + word, "g"), " " + markedword);
                     labeledpoem = labeledpoem.replace(new RegExp(word + " ", "g"), markedword + " ");
                 });
             });
 
             labeledpoem = labeledpoem.replace(/\n/g, "<br>");
+            labeledpoem = labeledpoem.replace(/\\/g, "");
             document.getElementById("user" + category).innerHTML = "<p class='poemtext'>" + labeledpoem + "</p><div class='poemgradient'>" + Capitalize(category) + " Gradient Notation: 0<div style='background: linear-gradient(90deg, " + LegendColors[i][0] + " 0%, " + LegendColors[i][1] + " 100%);'></div>1</div>";
 
 
@@ -346,7 +349,6 @@ function poemAnalysis(poem, div_id) {
         $(function () {
             $("[data-toggle='tooltip']").tooltip()
         })
-        // takescreenshot();
     });
 
     toggleUserOutput(0);
@@ -410,4 +412,3 @@ function renderwordcloud(wordlist) {
     }
 }
 
-//getUserInput('userpoeminput', 'UserPoemAnalysis')

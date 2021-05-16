@@ -29,7 +29,8 @@
         <a href="#nlp"><span>NLP & Sentiment</span><i class="fa fa-circle"></i></a>
         <a href="#context"><span>Context</span><i class="fa fa-circle"></i></a>
         <a href="#development"><span>Development</span><i class="fa fa-circle"></i></a>
-        <a href="#analysis"><span>Analysis</span><i class="fa fa-circle"></i></a>
+        <a href="#sentiment"><span>Sentiment</span><i class="fa fa-circle"></i></a>
+        <a href="#analyzer"><span>Analyzer</span><i class="fa fa-circle"></i></a>
     </nav>
 
     <section id="home">
@@ -130,7 +131,12 @@
             <img class="illustration1" src="IMG/illustration/1.png">
             <p>Sentiment analysis in Natural Language Processing (also known as opinion mining or emotion AI) is the use of NLP text analysi and computational linguistics to systematically extract, quantify, and identify affective states and subjective information in a text sample. The standard categories of classifications include valence, arousal, dominance, concreteness, etc.</p>
         </div>
+
         <hr class="div">
+
+        <h1 class="alignright">
+            The NRC Valence, Arousal, and Dominance (NRC-VAD) Lexicon</h1>
+        <p class="alignright">For this project, The NRC-VAD was used to analyze the sentiment of poetry. The NRC Valence, Arousal, and Dominance (VAD) Lexicon includes a list of more than 20,000 English words and their valence, arousal, and dominance scores. For a given word and a dimension (V/A/D), the scores range from 0 (lowest V/A/D) to 1 (highest V/A/D). The lexicon with its fine-grained real-valued scores was created by manual annotation using Best--Worst Scaling. <em><br><br>valence is the positive--negative or pleasure--displeasure dimension;<br>arousal is the excited--calm or active--passive dimension;<br>and dominance is the powerful--weak or 'have full control'--'have no control' dimension.</em></p>
         <div class="flexVertical">
             <div id="lexicon"></div>
             <div class="flexHorizontal lexiconoptions">
@@ -141,68 +147,72 @@
                 </div>
                 <button id="lexiconrandomize" class="resetbutton" onclick="lexiconbubble();"><i class="fa fa-random"></i></button>
             </div>
-            <p class="caption">A short caption</p>
+            <p class="caption">This is a 1000-word preview collection of the lexicon, ordered across the 0 - 1 spectrum. <b>hover above the word nodes</b> for more information and <b>click on the different metrix</b> to re-order. You can also <b>click on the randomize button</b> to look at a different set of words.</p>
         </div>
     </section>
-    
+
     <hr class="section">
-    
+
     <section id="context">
-        <div class="row">
-            <div class="col-6">
-                <div id="radar_type"></div>
-            </div>
-            <div class="col-6">
-                <!--                <img src="./IMG/Radar-MockUp.jpg" width="800" height="600">-->
-            </div>
+        <h1>Where does Sentiment Analysis Fit in?<br><br></h1>
+        <div class="flexHorizontal">
+            <p>Sentiment analysis in Natural Language Processing (also known as opinion mining or emotion AI) is the use of NLP text analysi and computational linguistics to systematically extract, quantify, and identify affective states and subjective information in a text sample. The standard categories of classifications include valence, arousal, dominance, concreteness, etc.</p>
         </div>
+
+            <div class="flexHorizontal">
+                <div id="radar_type"></div>
+                <div id="radar_zoom"></div>
+            </div>
     </section>
-    
+
     <hr class="section">
-    
+
     <section id="development">
         <div class="flexHorizontal">
             <div class="violin">
                 <div id="violin"></div>
                 <p class="caption" style="margin-left: -100px;">You may <b>click on each sentiment attribute</b> to explore the individual poems and their mapping; <b>hover above the poem nodes</b> for more information and <b>click between the expanded sentiments</b> to exit.</p>
             </div>
-            <p>Modern poetry seems to have more distinctive sentiment characteristics
+            <p><em><b>Has Poetry changed over time?</b></em><br><br>
+                It is quite interesting to see that modern poetry seems to have more distinctive sentiment characteristics, yet the general recognized sentiment are always around the mid-range. From this, we can make some assumptions, like modern poetry may be more personalized than earlier (Renaissance) poetry with specific rythmic guidelines, given things like increasing poetry written in the free verse format.
             </p>
         </div>
     </section>
-    
-    <hr class="section">
-    
-    <section id="analysis">
-        This is where individual poem analysis goes
-    </section>
-    
-    <!--
-    <section id="Creatiion" style="padding-top: 150px;">
-        
-        <section class="section intro">
-            <div class="container">
-                <h1>Create your own Poem</h1>
-            </div>
-        </section>
 
-        <div id="capture" style="display: flex; padding: 100px;">
-            <div style="padding-right: 50px; height: 500px">
-                <textarea id="userpoeminput">type your poem here ...
-                </textarea>
-                <br>
-                <button onclick="getUserInput('userpoeminput', 'UserPoemAnalysis')">Analyze</button>
-                <br>
-                <br>
-                <div id="Testresult"></div>
+    <hr class="section">
+
+    <section id="sentiment">
+        <h1>Poetic Sentment</h1>
+        <p>As we have already looked at the average measured sentiment in poetry across different themes and time, let's look at exactly where these sentiments are found within poetry. This section explores the way different poets utilize words within the poetry, and how their choices affect the overall perceived sentiment in their work.</p>
+        <hr class="div">
+        <div class="flexHorizontal" style="align-items: flex-start !important;">
+            <div>
+                <div>
+                    Display Poem Cluster
+                    <select id="categoryselector">
+                        <option disabled selected>Select A Category</option>
+                    </select>
+                    <span id="attributeby">by</span>
+                    <select id="attributeselector">
+                        <option value="Valence" selected>Valence</option>
+                        <option value="Arousal">Arousal</option>
+                        <option value="Dominance">Dominance</option>
+                    </select>
+                </div>
+                <div id="clustervis"></div>
+                <div class="flexVertical" id="clustercaption">
+                    <em style="padding-top: 10px;">Select a category to filter poems by, and choose a poem to display its detailed analysis</em>
+                </div>
             </div>
             <div>
-                <div style="padding-bottom: 10px;">
-                    <button id="toggleUserOutput0" class="toggleUserOutput active" onclick="toggleUserOutput(0)">Valence</button>
-                    <button id="toggleUserOutput1" class="toggleUserOutput" onclick="toggleUserOutput(1)">Dominance</button>
-                    <button id="toggleUserOutput2" class="toggleUserOutput" onclick="toggleUserOutput(2)">Arousal</button>
+                <div id="togglebuttons">
+                    <button id="toggleUserOutput0" class="toggleUserOutput active" onclick="toggleUserOutput(0)">Overall</button>
+                    <button id="toggleUserOutput1" class="toggleUserOutput" onclick="toggleUserOutput(1)">Valence</button>
+                    <button id="toggleUserOutput2" class="toggleUserOutput" onclick="toggleUserOutput(2)">Dominance</button>
+                    <button id="toggleUserOutput3" class="toggleUserOutput" onclick="toggleUserOutput(3)">Arousal</button>
                 </div>
-                <div style="display: flex; height: 0;">
+                <div class="poemanalysis">
+                    <div id="useroverall"></div>
                     <div id="uservalence"></div>
                     <div id="userdominance"></div>
                     <div id="userarousal"></div>
@@ -210,19 +220,26 @@
             </div>
         </div>
     </section>
--->
+
+    <hr class="section">
+
+    <section id="analyzer">
+        <h1 class="alignright">Where does sentiment analysis for poetry leads to?</h1>
+        <p class="alignright">
+            The classification of emotional states from poetry has not been receiving enough attention in the NLP world given its flexible connection to traditional grammatical structure. However, with the emotional analysis, we may be able to understand more regarding author's intent for expression through this method.<br><br><em>Given the poems subject matter, how do poems make you feel?<br>Could it change the way you used to interpret poetry?<br>Does this additional aspect of understanding give you a new perspective to poetry, or perhaps motivation to write and analyze your own?</em><br><br>I have created a draft Sentiment Analyzer that allows you to input text-drafts and build visualizations based on your creation. Cllick below to proceed to the AI Poetry Sentiment Analyzer.<br><br></p>
+        <h4 class="alignright"><a href="analyze.html" class="largepill">Poetry Analyzer</a></h4>
+    </section>
+
     <!--footer-->
-    <footer>
-        <div class="f-f footer-container">
-            <div class="fo-tile">
-                <h1>6.859<br>Interactive<br>Data Visualization</h1>
-                <p>2021
-                    <br>All rights reserved ©
-                </p>
-            </div>
-            <div class="fo-tile">
-                <p>Massachusetts Institute of Technology</p>
-            </div>
+    <footer class="flexHorizontal">
+        <div>
+            <h4>6.859 Interactive Data Visualization</h4>
+            <p>Massachusetts Institute of Technology | 2021 <br>Project by <em>Charles N.H. Wu</em><br>All rights reserved © </p>
+        </div>
+        <div>
+            <p style="width: 300px; text-align: right;">Datasets: <a class="linkreference" href="https://saifmohammad.com/WebPages/nrc-vad.html">NRC-VAD Lexicon</a>, etc.<br><br>
+                Acknowledgement: Special thanks to feedback from Arvind Satyanarayan and the TAs of this course
+            </p>
         </div>
     </footer>
     <!--bootstrap-->
@@ -233,7 +250,10 @@
     <!--personal js-->
     <script src="./js/violinBaby.js"></script>
     <script src="./js/Radar.js"></script>
+    <script src="./js/RadarBig.js"></script>
     <script src="./js/lexicon.js"></script>
+    <script src="./js/analyze.js"></script>
+    <script src="./js/cluster.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/scroll.js"></script>
 </body></html>

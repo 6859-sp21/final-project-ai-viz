@@ -4,16 +4,17 @@ function CallRadar() {
     let factor = 50,
         offset = 100;
     var margin = 30,
-        width = offset * 8,
+        width = offset * 4 + 40,
         height = offset * 8;
 
     var svg = d3.select("#radar_type")
         .append("svg")
+        .attr("id", "radartype")
         .attr("width", width + margin + margin)
         .attr("height", height + margin + margin)
         .append("g")
 
-    let categories = ["Nature", "Animals", "Arts & Sciences", "Painting & Sculpture", "Social Commentaries", "Gender & Sexuality", "Relationships", "Friends & Enemies", "Language & Linguistics", "Race & Ethnicity", "Living", "The Body", "Love", "Desire", "Religion", "Christianity", "Realistic & Complicated", "Activities", "Travels & Journeys", "Time & Brevity", "Seas, Rivers, & Streams", "Spring", "Money & Economics", "Birth & Birthdays", "Landscapes & Pastorals", "Weather", "History & Politics", "Town & Country Life", "War & Conflict", "Poetry & Poets", "Youth", "First Love", "Reading & Books", "Marriage & Companionship", "Men & Women", "Crime & Punishment", "Parenthood", "Family & Ancestors", "School & Learning", "Class", "Jobs & Working", "The Mind", "Eating & Drinking", "Sports & Outdoor Activities", "God & the Divine", "Photography & Film", "Cities & Urban Life", "Death", "Romantic Love", "Music", "Stars, Planets, Heavens", "Sorrow & Grieving", "Home Life", "Heartache & Loss", "Trees & Flowers", "Mythology & Folklore", "Greek & Roman Mythology", "Life Choices", "Sciences", "Summer", "Health & Illness", "Faith & Doubt", "The Spiritual", "Horror", "Growing Old", "Gardening", "Other Religions", "Break-ups & Vexed Love", "Gay, Lesbian, Queer", "Ghosts & the Supernatural", "Fairy-tales & Legends", "Heroes & Patriotism", "Indoor Activities", "Islam", "Theater & Dance", "Kwanzaa", "Philosophy", "Disappointment & Failure", "Judaism", "Coming of Age", "New Year", "Separation & Divorce", "Popular Culture", "Fall", "Architecture & Design", "Pets", "Winter", "Memorial Day", "Humor & Satire", "St. Patrick's Day", "Passover", "Independence Day", "Midlife", "Weddings", "Infancy", "Get Well & Recovery", "Graduation", "Valentine's Day"];
+    let categories = ["Nature", "Animals", "Painting & Sculpture", "Gender & Sexuality", "Friends & Enemies", "Race & Ethnicity", "Living", "Love", "Religion", "Death", "Realistic & Complicated", "Activities", "Travels & Journeys", "Time & Brevity", "Spring", "Landscapes & Pastorals", "Weather", "History & Politics", "War & Conflict", "Youth", "Crime & Punishment", "Family & Ancestors", "School & Learning", "The Mind", "Eating & Drinking", "God & the Divine", "Life Choices", "Music", "Stars, Planets, Heavens", "Home Life", "Trees & Flowers", "Sciences"];
 
     d3.json("./processeddata/Category_Sentiment.json").then(function (data) {
         let c = ["Valence", "Dominance", "Arousal"];
@@ -34,15 +35,67 @@ function CallRadar() {
             .attr("class", "axis");
 
 
-        let graphrow = 8;
+        let graphrow = 4;
 
-        for (let i = 0; i < 64; i++) {
+        for (let i = 0; i < 32; i++) {
 
             let category = categories[i];
             let radardata = data[category].metrix;
 
+
+            axis.append("circle")
+                .attr("class", "radarbackground radarbackground" + i)
+                .attr("cx", offset * ((i % graphrow) + 1))
+                .attr("cy", offset * (Math.floor(i / graphrow) + 1))
+                .attr("r", function (d, i) {
+                    return (4 - i) / 4 * factor * 0.8;
+                })
+                .style("stroke", "#414050")
+                .style("fill", "transparent")
+                .style("stroke-width", 0.2)
+                .style("opacity", 0.5)
+                .on("mouseover", function () {
+                    d3.selectAll(".radararea" + i).style("fill", "#579ee4");
+                    d3.selectAll(".radarbackground" + i).style("stroke-width", 1).style("stroke", "#579ee4")
+
+                    let background = svg.append("rect")
+                        .attr("class", "radartooltip")
+                        .attr("rx", 3)
+                        .attr("ry", 3)
+                        .style("fill", "#579ee4")
+                    svg.append("text")
+                        .attr("x", this.cx.baseVal.value + 7)
+                        .attr("y", this.cy.baseVal.value - 50)
+                        .attr("class", "radartooltip radartooltip1")
+                        .text(category)
+//                        .style("text-anchor", "middle")
+                        .style("font-size", 12)
+                        .style("font-weight", 300)
+                        .style("fill", "white")
+
+                    let text1 = document.getElementsByClassName("radartooltip1")[0].getBBox().width;
+
+
+                    background
+                        .attr("x", this.cx.baseVal.value)
+                        .attr("y", this.cy.baseVal.value - 63)
+                        .attr("width", text1 + 15)
+                        .attr("height", 20)
+
+                })
+                .on("mouseout", function () {
+                    d3.selectAll(".radararea" + i).style("fill", "#d36764");
+                    d3.selectAll(".radarbackground" + i).style("stroke-width", 0.2).style("stroke", "#d36764");
+                    d3.selectAll(".radartooltip").remove();
+
+                })
+                .on("click", function () {
+                    RadarBig(category);
+                })
+
             //Append the lines
             axis.append("line")
+                .attr("class", "radarbackground radarbackground" + i)
                 .attr("x1", offset * ((i % graphrow) + 1))
                 .attr("y1", offset * (Math.floor(i / graphrow) + 1))
                 .attr("x2", function (d) {
@@ -51,9 +104,17 @@ function CallRadar() {
                 .attr("y2", function (d) {
                     return angles[d][1] * factor * 0.8 + offset * (Math.floor(i / graphrow) + 1);
                 })
-                .attr("class", "line")
-                .style("stroke", "white")
-                .style("stroke-width", 0.5);
+                .style("stroke", "#414050")
+                .style("stroke-width", 0.5)
+                .style("opacity", 0.5)
+                .on("mouseover", function () {
+                    d3.selectAll(".radararea" + i).style("fill", "#579ee4");
+                    d3.selectAll(".radarbackground" + i).style("stroke-width", 1).style("stroke", "#579ee4")
+                })
+                .on("mouseout", function () {
+                    d3.selectAll(".radararea" + i).style("fill", "#d36764");
+                    d3.selectAll(".radarbackground" + i).style("stroke-width", 0.2).style("stroke", "#d36764");
+                })
 
             axis.append("text")
                 .attr("x", function (d) {
@@ -66,19 +127,9 @@ function CallRadar() {
                     return d.substring(0, 1);
                 })
                 .style("font-size", "10px")
-                .style("fill", "white")
+                .style("fill", "#414050")
                 .style("alignment-baseline", "middle")
                 .style("text-anchor", "middle")
-
-            axis.append("circle")
-                .attr("cx", offset * ((i % graphrow) + 1))
-                .attr("cy", offset * (Math.floor(i / graphrow) + 1))
-                .attr("r", function (d, i) {
-                    return (4 - i) / 4 * factor * 0.8;
-                })
-                .style("stroke", "white")
-                .style("fill", "none")
-                .style("stroke-width", 0.2);
 
             // Add the area.
 
@@ -99,9 +150,21 @@ function CallRadar() {
 
             svg.append("path")
                 .data([c])
-                .attr("class", "area")
+                .attr("class", "radararea radararea" + i)
                 .attr("d", area)
-                .style("fill", "white")
+                .style("fill", "#d36764")
+                .on("mouseover", function () {
+                    d3.selectAll(".radararea" + i).style("fill", "#579ee4");
+                    d3.selectAll(".radarbackground" + i).style("stroke-width", 1).style("stroke", "#579ee4")
+                })
+                .on("mouseout", function () {
+                    d3.selectAll(".radararea" + i).style("fill", "#d36764");
+                    d3.selectAll(".radarbackground" + i).style("stroke-width", 0.2).style("stroke", "#d36764");
+                })
+                .on("click", function () {
+                    RadarBig(category);
+                })
+
         }
     })
 }

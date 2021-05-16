@@ -16,4 +16,5 @@ $(window).scroll(function (event) {
 
 $(window).resize(function () {
     CallViolin();
+    lexiconbubble();
 });

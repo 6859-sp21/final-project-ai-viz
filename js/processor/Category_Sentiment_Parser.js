@@ -1,10 +1,10 @@
 // by charles wu
-d3.csv("data/Tag_Scraper.csv").then(function (data) {
+d3.csv("../../data/Tag_Scraper.csv").then(function (data) {
 
     console.log(data[0]);
 
     // load pre-trained lexicon for identifying valence, arousal and dominance
-    d3.json("processeddata/VAD.json").then(function (sentiment) {
+    d3.json("../../processeddata/VAD.json").then(function (sentiment) {
 
         /* // this chunk of text was used to create the array of categories
         let categories = [];
@@ -45,7 +45,7 @@ d3.csv("data/Tag_Scraper.csv").then(function (data) {
                 D = 0,
                 VADCount = 0;
 
-            d.Poem = d.Poem.substring(1, previewlength);
+            d.PoemShort = d.Poem.substring(1, previewlength);
 
             PoemArray.forEach(function (w) {
                 w = w.toLowerCase(); // ensures that the json-call matches
@@ -97,8 +97,10 @@ d3.csv("data/Tag_Scraper.csv").then(function (data) {
                 data: filtereddata
             }
         });
+        
+        console.log(exportdata);
 
-        //downloadObject(exportdata, "Category_Sentiment");
+        downloadObject(exportdata, "Category_Sentiment");
 
     });
 });
