@@ -137,6 +137,7 @@ function updatecluster(id) {
 
         $("#attributeselector").change(function () {
             attribute = this.value;
+            document.getElementById("clustercaption").innerHTML = "<div class='poemgradient'>" + attribute + " Gradient: 0<div style='background: linear-gradient(90deg, " + CatColors[attribute](0) + " 0%, " + CatColors[attribute](1) + " 100%);'></div>1</div><div class='caption'>Poem is grouped and colored based on the selected attribute</div>"
             node.transition().style("fill", function (d) {
                 return CatColors[attribute](remap(d[attribute]));
             })

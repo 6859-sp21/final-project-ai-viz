@@ -27,8 +27,8 @@
         <a href="#home"><span>Home</span><i class="fa fa-circle"></i></a>
         <a href="#history"><span>History</span><i class="fa fa-circle"></i></a>
         <a href="#nlp"><span>NLP & Sentiment</span><i class="fa fa-circle"></i></a>
-        <a href="#context"><span>Context</span><i class="fa fa-circle"></i></a>
         <a href="#development"><span>Development</span><i class="fa fa-circle"></i></a>
+        <a href="#context"><span>Context</span><i class="fa fa-circle"></i></a>
         <a href="#sentiment"><span>Sentiment</span><i class="fa fa-circle"></i></a>
         <a href="#analyzer"><span>Analyzer</span><i class="fa fa-circle"></i></a>
     </nav>
@@ -170,15 +170,17 @@
     <hr class="section">
 
     <section id="context">
-        <h1>Where does Sentiment Analysis Fit in?<br><br></h1>
+        <h1>Is there are correlation between theme, context and sentiment?</h1>
         <div class="flexHorizontal">
-            <p>Sentiment analysis in Natural Language Processing (also known as opinion mining or emotion AI) is the use of NLP text analysi and computational linguistics to systematically extract, quantify, and identify affective states and subjective information in a text sample. The standard categories of classifications include valence, arousal, dominance, concreteness, etc.</p>
+            <p>We express different emotions when speaking and writing about specific subjects based on a combination of common definition and subjective experience. Does this apply to poetry as well? Below is a collection of 36 themes analyzed the Poetry foundation website database displayed in radar graph format. Each radar graph presents the min and max VAD scores of the poem classifier in each category.</p>
         </div>
 
         <div class="flexHorizontal">
             <div id="radar_type"></div>
             <div id="radar_zoom"></div>
+
         </div>
+        <p class="caption" style="margin-left: 30vw;">You may <b>click on each radar graph</b> to explore the specific category of poetry and their VAD score; <b>hover above the poem rings</b> for more information.</p>
     </section>
 
 
@@ -260,4 +262,6 @@
     <script src="./js/cluster.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/scroll.js"></script>
-</body></html>
+</body>
+
+</html>

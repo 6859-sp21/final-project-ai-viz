@@ -15469,11 +15469,6 @@
         "Valence": 0.448,
         "Arousal": 0.375
     },
-    "class": {
-        "Dominance": 0.522,
-        "Valence": 0.656,
-        "Arousal": 0.314
-    },
     "classic": {
         "Dominance": 0.611,
         "Valence": 0.69,
