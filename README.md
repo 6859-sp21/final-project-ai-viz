@@ -26,6 +26,18 @@ A collection of pre-processed and annotated poetry datasets were used for explor
 
 https://6859-sp21.github.io/final-project-ai-viz/ProjectPage.html
 
+### Visualisation Page
+
+https://6859-sp21.github.io/final-project-ai-viz/
+
+### Paper
+
+https://6859-sp21.github.io/final-project-ai-viz/final/Paper.pdf
+
+### Video
+
+https://www.youtube.com/watch?v=5pDhj6ZcJcI
+
 ### Interaction
 
 `Workflow`
