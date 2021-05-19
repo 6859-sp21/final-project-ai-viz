@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poetry Viz</title>
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400;1,700&family=Stalemate&display=swap" rel="stylesheet">
+    <!--boostrap 'n libraries-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!--D3 library-->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+    <script src="https://unpkg.com/topojson-client@3"></script>
+    <!--styles-->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+
+    <section id="home">
+        <img id="title" src="IMG/title.svg">
+        <div class="projectpage_title">
+            <h4>Can NLP-based sentiment analysis provide insights to poetry?</h4>
+            
+            <p>Abstract<br>Poetry has been around for thousands of years, yet it always lived in a fluid state of development. Given the current technological development applied to literature studies, the classification of emotional states from poetry has not been receiving enough attention in the NLP world given its flexible connection to traditional grammatical structure. This paper discusses Reading Between the Lines, a sentiment visualization project specifically designed for poetry. The project intends provide assistance to build alternative view for readers when interpret the expression of emotions in poetic works.<br><br>Project by <em>Charles N.H. Wu</em></p>
+            <br>
+            <a href="index.html" class="pill">Visualization Page</a><br>
+            <a href="./Paper/Paper.pdf" class="pill">Paper</a><br>
+            <a href="https://youtu.be/5pDhj6ZcJcI" class="pill">Video</a>
+
+        </div>
+    </section>
+
+    <!--footer-->
+    <footer class="flexHorizontal">
+        <div>
+            <h4>6.859 Interactive Data Visualization</h4>
+            <p>Massachusetts Institute of Technology | 2021 <br>Project by <em>Charles N.H. Wu</em><br>All rights reserved © </p>
+        </div>
+        <div>
+            <p style="width: 300px; text-align: right;">Datasets: <a class="linkreference" href="https://saifmohammad.com/WebPages/nrc-vad.html">NRC-VAD Lexicon</a>, etc.<br><br>
+                Acknowledgement: Special thanks to feedback from Arvind Satyanarayan and the TAs of this course
+            </p>
+        </div>
+    </footer>
+    <!--bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--screenshotlibrary-->
+    <script src="js/html2canvas.min.js"></script>
+    <!--personal js-->
+    <script src="./js/violinBaby.js"></script>
+    <script src="./js/Radar.js"></script>
+    <script src="./js/RadarBig.js"></script>
+    <script src="./js/lexicon.js"></script>
+    <script src="./js/analyze.js"></script>
+    <script src="./js/cluster.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/scroll.js"></script>
+</body></html>

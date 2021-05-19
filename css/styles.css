@@ -185,6 +185,15 @@ hr.div {
     border-left: dotted 2px var(--text);
 }
 
+.projectpage_title {
+    width: 600px;
+    height: 250px;
+    overflow-y: visible;
+    margin: 10px 0 50px 0;
+    padding-left: 30px;
+    border-left: dotted 2px var(--text);
+}
+
 .title_desc > p {
     margin-bottom: 0;
 }
