@@ -44,6 +44,14 @@ python3 -m http.server 8000
 ```
 4. You can go to individual visualizations by going to the URL `localhost:8000/cluster.html` or `localhost:8000/bubble.html` in your web browser. 
 
+## Reference
+Greene, E., Bodrumlu, T. and Knight, K., 2010, October. Automatic analysis of rhythmic poetry with applications to generation and translation. In Proceedings of the 2010 conference on empirical methods in natural language processing (pp. 524-533).
+Hühn, P. and Kiefer, J., 2011. The narratological analysis of lyric poetry: studies in English poetry from the 16th to the 20th century (Vol. 7). Walter de Gruyter.
+Kumar, V. and Minz, S., 2014. Multi-view ensemble learning for poem data classification using SentiWordNet. In Advanced Computing, Networking and Informatics-Volume 1 (pp. 57-66). Springer, Cham.
+Lau, J.H., Cohn, T., Baldwin, T., Brooke, J. and Hammond, A., 2018. Deep-speare: A joint neural model of poetic language, meter and rhyme. arXiv preprint arXiv:1807.03491.
+Madnani, N., 2005. Emily: A tool for visual poetry analysis. University of Maryland, Tech. Rep.
+Peters, M.E., Neumann, M., Iyyer, M., Gardner, M., Clark, C., Lee, K. and Zettlemoyer, L., 2018. Deep contextualized word representations. arXiv preprint arXiv:1802.05365.
+Singhi, A. and Brown, D.G., 2014. Are poetry and lyrics all that different?. In ISMIR (pp. 471-476).
 
 <!-- LICENSE -->
 ## License
